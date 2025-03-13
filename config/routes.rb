@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
+  # get "/" => "quests#index"
   get "/" => "quests#index"
 
   resources :quests
+  resources :banks
+  resources :disbursement_dates
 end

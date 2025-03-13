@@ -1,0 +1,35 @@
+<style>
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+</style>
+
+<h1>Bank Listings</h1>
+
+<%= form_with url: banks_path, method: :get, local: true do |f| %>
+  <label for="bank_type">Select Bank Type:</label>
+  <%= f.select :bank_type, options_for_select(Bank.bank_types.map { |type| [type.humanize, type] }, params[:bank_type]), include_blank: false %>
+  <%= f.submit "Filter" %>
+<% end %>
+
+<br/>
+
+<table style='border: 1px solid black;'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bank Type</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @banks.each do |bank| %>
+      <tr>
+        <td><%= bank.code %></td>
+        <td><%= bank.bank_type %></td>
+        <td><%= bank.active ? "Yes" : "No" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
