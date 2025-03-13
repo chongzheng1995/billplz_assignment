@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  type: 
+  isFpx: false
+  isObw: false
+  active: false
+
+two:
+  code: MyString
+  type: 
+  isFpx: false
+  isObw: false
+  active: false
